@@ -1,0 +1,14 @@
+[alias]
+    st = status
+    br = branch
+    co = checkout
+    ci = commit
+[core]
+    editor = vim
+    excludesfile = ~/.gitignore
+    trustctime = false
+[pager]
+    branch = false
+    diff = false
+[pull]
+    ff = only
