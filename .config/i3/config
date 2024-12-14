@@ -195,5 +195,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 exec --no-startup-id setxkbmap -option "altwin:prtsc_rwin"
 exec --no-startup-id setxkbmap -option 'keycode:94=Print'
+exec --no-startup-id xmodmap ~/.xmodmap
+exec --no-startup-id autorandr --change
 
 gaps inner 8
