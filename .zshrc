@@ -150,8 +150,5 @@ if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files --hidden'
 fi
 
-export YVM_DIR=/home/asplap1392/.yvm
-[ -r $YVM_DIR/yvm.sh ] && . $YVM_DIR/yvm.sh
-
 # set slower mouse speed
 xinput set-prop 12 "Coordinate Transformation Matrix" 1, 0, 0, 0, 1, 0, 0, 0, 2
