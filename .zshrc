@@ -141,12 +141,11 @@ load-nvmrc
 export YVM_DIR=$HOME/.yvm
 [ -r $YVM_DIR/yvm.sh ] && source $YVM_DIR/yvm.sh
 
-# determines search program for fzf
+# determines search program for fzf; prefer rg over ag
 if type ag &> /dev/null; then
   export FZF_DEFAULT_COMMAND='ag -p ~/.gitignore -g ""'
 fi
 
-# prefer rg over ag
 if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files --hidden'
 fi
