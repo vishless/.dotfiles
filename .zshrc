@@ -151,6 +151,7 @@ if type rg &> /dev/null; then
 fi
 
 # set slower mouse speed
-# get the device id by entering xinput in the terminal
+# get the device id by 
+# entering xinput in the terminal
 # 12 is the device id here
 xinput set-prop 12 "Coordinate Transformation Matrix" 1, 0, 0, 0, 1, 0, 0, 0, 2
