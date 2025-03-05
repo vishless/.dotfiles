@@ -102,11 +102,6 @@ source $ZSH/oh-my-zsh.sh
 alias python=python2
 alias vim=nvim
 
-# set vim mode for the shell
-set -o vi
-# provent echo from overwriting a file
-set -o noclobber
-
 export PATH="$PATH:$HOME/Apps/bin"
 export LESS="-FRSX"
 export BUNDLE_IGNORE_CONFIG=1
@@ -154,4 +149,10 @@ fi
 # get the device id by 
 # entering xinput in the terminal
 # 12 is the device id here
-xinput set-prop 12 "Coordinate Transformation Matrix" 1, 0, 0, 0, 1, 0, 0, 0, 2
+#xinput set-prop 12 "Coordinate Transformation Matrix" 1, 0, 0, 0, 1, 0, 0, 0, 2
+
+# set vim mode for the shell
+set -o vi
+
+# provent echo from overwriting a file
+set -o noclobber
