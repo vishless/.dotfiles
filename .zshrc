@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -8,7 +15,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -99,8 +107,14 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias python=python2
 alias vim=nvim
+
+# set vim mode for the shell
+set -o vi
+# provent echo from overwriting a file
+set -o noclobber
+# Ctrl+d needs to be pressed 10 times to exit the shell
+set -o ignoreeof
 
 export PATH="$PATH:$HOME/Apps/bin"
 export LESS="-FRSX"
@@ -136,23 +150,32 @@ load-nvmrc
 export YVM_DIR=$HOME/.yvm
 [ -r $YVM_DIR/yvm.sh ] && source $YVM_DIR/yvm.sh
 
-# determines search program for fzf; prefer rg over ag
+#determines search program for fzf
 if type ag &> /dev/null; then
   export FZF_DEFAULT_COMMAND='ag -p ~/.gitignore -g ""'
 fi
 
+#    #refer rg over ag
 if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files --hidden'
 fi
 
+export YVM_DIR=/home/asplap1392/.yvm
+[ -r $YVM_DIR/yvm.sh ] && . $YVM_DIR/yvm.sh
+
 # set slower mouse speed
-# get the device id by 
-# entering xinput in the terminal
-# 12 is the device id here
-#xinput set-prop 12 "Coordinate Transformation Matrix" 1, 0, 0, 0, 1, 0, 0, 0, 2
+# xinput set-prop 12 "Coordinate Transformation Matrix" 1, 0, 0, 0, 1, 0, 0, 0, 2
 
-# set vim mode for the shell
-set -o vi
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
-# provent echo from overwriting a file
-set -o noclobber
+# Add kitty to PATH in .bashrc or .zshrc
+export PATH="$HOME/.local/kitty.app/bin:$PATH"
+export TERMINAL=kitty
+
+export LANG=en_IN.UTF-8
+export LANGUAGE=en_IN.UTF-8
+export LC_ALL=en_IN.UTF-8
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
