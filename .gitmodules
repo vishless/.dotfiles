@@ -4,3 +4,6 @@
 [submodule ".config/polybar"]
 	path = .config/polybar
 	url = https://github.com/vishless/polybar-config
+[submodule ".config/i3"]
+	path = .config/i3
+	url = https://github.com/vishless/i3-config
