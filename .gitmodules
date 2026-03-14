@@ -1,6 +1,6 @@
 [submodule ".config/nvim"]
 	path = .config/nvim
-	url = https://github.com/vishless/nvim
+	url = https://github.com/vishless/nvim/
 [submodule ".config/polybar"]
 	path = .config/polybar
 	url = https://github.com/vishless/polybar-config
