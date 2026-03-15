@@ -78,7 +78,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -169,13 +169,20 @@ export YVM_DIR=/home/asplap1392/.yvm
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-# Add kitty to PATH in .bashrc or .zshrc
-export PATH="$HOME/.local/kitty.app/bin:$PATH"
-export TERMINAL=kitty
-
 export LANG=en_IN.UTF-8
 export LANGUAGE=en_IN.UTF-8
 export LC_ALL=en_IN.UTF-8
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Add kitty to PATH in .bashrc or .zshrc
+export PATH="$HOME/.local/kitty.app/bin:$PATH"
+export TERMINAL=kitty
+
+# Add nvim to the path
+export PATH="/opt/nvim/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
+# Ctrl + Space for zsh autocomplete
+bindkey '^ ' autosuggest-accept
