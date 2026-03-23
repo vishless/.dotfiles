@@ -12,3 +12,6 @@
     diff = false
 [pull]
     ff = only
+[user]
+	name = Vishless
+	email = mail.vishnupk@gmail.com
