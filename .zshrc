@@ -108,6 +108,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim=nvim
+alias python=python3
 
 # set vim mode for the shell
 set -o vi
@@ -186,3 +187,15 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # Ctrl + Space for zsh autocomplete
 bindkey '^ ' autosuggest-accept
+
+export PATH="$HOME/.local/src/llama.cpp/build/bin:$PATH"
+
+
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/viz/.lmstudio/bin"
+# End of LM Studio CLI section
+
+
+# opencode
+export PATH=/home/viz/.opencode/bin:$PATH
