@@ -199,3 +199,11 @@ export PATH="$PATH:/home/viz/.lmstudio/bin"
 
 # opencode
 export PATH=/home/viz/.opencode/bin:$PATH
+
+# nvcc
+export PATH=/usr/local/cuda-12.5/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-12.5/lib64:$LD_LIBRARY_PATH
+
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
